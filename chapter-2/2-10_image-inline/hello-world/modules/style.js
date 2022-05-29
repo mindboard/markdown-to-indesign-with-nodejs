@@ -22,8 +22,8 @@ style.getArialParagraphStyle = (doc, fontSize)=>{
     }
 };
 
-style.getListItemParagraphStyle = (doc, baseParagraphStyle)=>{
-    const name = `ListItem${baseParagraphStyle.name}`;
+style.getListItemParagraphStyle = (doc, basePs)=>{
+    const name = `ListItem${basePs.name}`;
     const ps = doc.paragraphStyles.itemByName(name);
     if( ps!=null ){
         return ps;
@@ -31,7 +31,7 @@ style.getListItemParagraphStyle = (doc, baseParagraphStyle)=>{
     else {
         const listItemPsParams = {
             name: name,
-            basedOn: baseParagraphStyle,
+            basedOn: basePs,
             bulletsAlignment: StaticAlignmentOptions.LEFT_ALIGN, 
             bulletChar: {
                 characterType: BulletCharacterType.UNICODE_ONLY,
