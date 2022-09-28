@@ -1,5 +1,3 @@
-//@target InDesign
-
 // ドキュメントの設定値.
 var docParams = {
     documentPreferences : {
